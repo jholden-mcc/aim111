@@ -1,2 +1,2 @@
 import streamlit as st
-st.write('Hello, *World!* :sungalsses:')
+st.write('Hello, *World!* :sunglasses:')
