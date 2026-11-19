@@ -46,8 +46,9 @@ returns_data = stock_data.pct_change().dropna()
 st.subheader("Stock Prices")
 st.line_chart(stock_data)
 
-st.subheader("Stock Returns")
-st.line_chart(returns_data)
+st.subheader("Total Return Over Time")
+cumulative_returns = (1 + returns).cumprod() - 1
+st.line_chart(cumulative_returns * 100)
 
 sharpe_ratio = calculate_sharpe_ratio(returns_data)
 sortino_ratio = calculate_sortino_ratio(returns_data)
