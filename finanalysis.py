@@ -24,8 +24,10 @@ def calculate_sortino_ratio(returns, risk_free_rate=0.02):
     downside_deviation = downside_returns.std().mean()
     return (portfolio_return - risk_free_rate) / downside_deviation
 
+# not really optimized but better than it was!  does portfolio based on returns
 def portfolio_optimization(returns):
-    return np.ones(len(returns.columns)) / len(returns.columns)
+    avg_returns = returns.mean().clip(lower=0)
+    return avg_returns / avg_returns.sum()
 
 st.title("Financial Analysis Web App")
 
