@@ -47,7 +47,7 @@ st.subheader("Stock Prices")
 st.line_chart(stock_data)
 
 st.subheader("Total Return Over Time")
-cumulative_returns = (1 + returns).cumprod() - 1
+cumulative_returns = (1 + returns_data).cumprod() - 1
 st.line_chart(cumulative_returns * 100)
 
 sharpe_ratio = calculate_sharpe_ratio(returns_data)
